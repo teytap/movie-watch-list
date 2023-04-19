@@ -2,14 +2,15 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Inter", sans-serif;
+  background-color: rgb(29, 28, 28);
+  color: wheat;
 }
 .container {
-  box-shadow: 0px 0px 10px grey;
-  width: 550px;
+  box-shadow: 0px 0px 10px black;
+  width: 650px;
   padding: 0;
 }
 header {
-  background-color: black;
   background-image: url("images/THJJRUhNlEc.png");
   background-size: cover;
   height: 208px;
@@ -30,24 +31,20 @@ header a {
   text-decoration: none;
 }
 header a:hover {
-  text-decoration: underline;
+  color: wheat;
 }
 form {
   position: absolute;
   bottom: -30px;
 }
 main {
-  height: 80vh;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */
+  min-height: 80vh;
+  width: 650px;
   padding: 34px;
-  overflow: scroll;
+  margin: 0 auto;
 }
-.no-data-container {
-  margin-top: 160px;
-  text-align: center;
-}
+
+/* ---no movie message --- */
 .no-movie-container {
   margin: 0 auto;
   text-align: center;
@@ -56,22 +53,29 @@ main {
   color: #dfdddd;
   font-weight: 700;
   line-height: 28px;
+  margin-bottom: 30px;
 }
 .no-movie-container a {
   font-weight: 700;
   font-size: 14px;
-
-  color: black;
   text-decoration: none;
+  background-color: white;
+  color: black;
+  padding: 4px 10px;
+  border-radius: 15px;
+}
+.no-movie-container a:hover {
+  background-color: wheat;
 }
 .no-movie-container a img {
   margin-right: 6px;
 }
-/* movie card */
+/* ---one movie card--- */
 .movie-card {
   margin: 10px;
   display: flex;
-  border-bottom: 1.5px solid #e5e7eb;
+  border-bottom: 1.5px solid wheat;
+  padding-top: 16px;
 }
 .poster {
   width: 100px;
@@ -84,12 +88,17 @@ main {
   line-height: 20px;
   margin-top: 20px;
 }
+.movie-short-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
 .movie-rate,
 .movie-runtime,
 .movie-genre,
 #remove-btn,
 #add-btn {
-  color: #111827;
+  color: white;
   font-weight: 400;
   font-size: 12px;
   line-height: 20px;
@@ -98,17 +107,27 @@ main {
 #remove-btn,
 #add-btn {
   background-color: white;
+  color: black;
   border: none;
+  border-radius: 15px;
+  padding: 3px 10px;
+}
+#remove-btn:hover,
+#add-btn:hover {
+  background-color: wheat;
 }
 .movie-card p {
   color: #6b7280;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
+  margin-top: 10px;
 }
+
 .hidden {
   display: none;
 }
+/* empty page */
 .not-found {
   font-weight: 700;
   color: #dfdddd;
@@ -116,4 +135,8 @@ main {
   line-height: 20px;
   text-align: center;
   margin-top: 60px;
+}
+.no-data-container {
+  margin-top: 160px;
+  text-align: center;
 }

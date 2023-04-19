@@ -41,6 +41,7 @@ document.addEventListener("click", (e) => {
     const oldArray = JSON.parse(localStorage.getItem("watchlistMovies"));
     targetBtn[0].classList.toggle("hidden");
     targetBtn[1].classList.toggle("hidden");
+    // remove movie from local storage
     const newArray = oldArray.filter((movie) => {
       return movie.imdbID !== e.target.dataset.imdb;
     });
@@ -82,7 +83,7 @@ function getMovieCardHtml(data) {
                   3
                 )}</span>
               </div>
-            <div>
+            <div class="movie-short-info">
                 <span class="movie-runtime">${data.Runtime}</span
                 ><span class="movie-genre">${data.Genre}</span
                 ><button class="film-btn hidden" id="remove-btn" data-imdb = ${
