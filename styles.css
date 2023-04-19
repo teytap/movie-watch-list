@@ -38,13 +38,15 @@ form {
 }
 main {
   height: 80vh;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; */
   padding: 34px;
+  overflow: scroll;
 }
 .no-data-container {
-  margin: 0 auto;
+  margin-top: 160px;
+  text-align: center;
 }
 .no-movie-container {
   margin: 0 auto;
@@ -103,4 +105,15 @@ main {
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
+}
+.hidden {
+  display: none;
+}
+.not-found {
+  font-weight: 700;
+  color: #dfdddd;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: center;
+  margin-top: 60px;
 }
