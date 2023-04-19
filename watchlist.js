@@ -39,6 +39,7 @@ function getWatchlistHtml() {
                   )}</span>
             </div>
             <div class="movie-short-info">
+                 <span class="movie-year">${watch.Year}</span>
                   <span class="movie-runtime">${watch.Runtime}</span
                   ><span class="movie-genre">${watch.Genre}</span
                   ><button class="film-btn" id="remove-btn" data-imdb = ${
@@ -48,6 +49,8 @@ function getWatchlistHtml() {
                     Remove
                   </button>
             </div>
+            <div class="movie-actors">Director: ${watch.Director} </div>
+            <div class="movie-actors">Actors: ${watch.Actors} </div>
                 <p>${watch.Plot}</p>
             </div>
       </div>`;

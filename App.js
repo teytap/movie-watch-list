@@ -84,8 +84,9 @@ function getMovieCardHtml(data) {
                 )}</span>
               </div>
             <div class="movie-short-info">
-                <span class="movie-runtime">${data.Runtime}</span
-                ><span class="movie-genre">${data.Genre}</span
+            <span class="movie-year">${data.Year}</span>
+                <span class="movie-runtime">${data.Runtime}</span>
+                <span class="movie-genre">${data.Genre}</span
                 ><button class="film-btn hidden" id="remove-btn" data-imdb = ${
                   data.imdbID
                 }>
@@ -100,6 +101,8 @@ function getMovieCardHtml(data) {
                 </button>
                 
             </div>
+            <div class="movie-actors">Director: ${data.Director} </div>
+            <div class="movie-actors">Actors: ${data.Actors} </div>
               <p>
                 ${data.Plot}
               </p>
