@@ -108,7 +108,7 @@ function getMovieCardHtml(data) {
 }
 
 function renderMovies() {
-  fetch(`http://www.omdbapi.com/?s=${title}&apikey=124ce01e`)
+  fetch(`https://www.omdbapi.com/?s=${title}&apikey=124ce01e`)
     .then((res) => res.json())
     .then((data) => {
       moviesContainer.innerHTML = "";
@@ -116,7 +116,7 @@ function renderMovies() {
         for (data of data.Search) {
           let searchTitle = data.Title.toLowerCase().split(" ").join("+");
 
-          fetch(`http://www.omdbapi.com/?t=${searchTitle}&apikey=124ce01e`)
+          fetch(`https://www.omdbapi.com/?t=${searchTitle}&apikey=124ce01e`)
             .then((res) => res.json())
             .then((data) => {
               searchedMoviesArray.push(data);
