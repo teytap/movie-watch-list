@@ -38,7 +38,7 @@ function getWatchlistHtml() {
                     3
                   )}</span>
             </div>
-            <div>
+            <div class="movie-short-info">
                   <span class="movie-runtime">${watch.Runtime}</span
                   ><span class="movie-genre">${watch.Genre}</span
                   ><button class="film-btn" id="remove-btn" data-imdb = ${
