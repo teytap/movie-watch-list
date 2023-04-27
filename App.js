@@ -63,6 +63,7 @@ searchBtn.addEventListener("click", (e) => {
 
 function getMovieCardHtml(data) {
   let poster = "";
+  let rating = "";
 
   if (data.Poster === "N/A" || data.Poster === undefined) {
     poster = "/images/movie.png";
@@ -70,31 +71,28 @@ function getMovieCardHtml(data) {
     poster = data.Poster;
   }
 
+  if (data.Ratings[0] === "N/A" || data.Ratings[0] === undefined) {
+    rating = "";
+  } else {
+    rating = data.Ratings[0].Value.slice(0, 3);
+  }
+
   moviesContainer.innerHTML += ` 
-  <div id="new-card" class="movie-card"><img src="${poster}" alt="${
-    data.Title
-  }-img" class="poster" />
+  <div id="new-card" class="movie-card"><img src="${poster}" alt="${data.Title}-img" class="poster" />
         <div id="movie-info">
               <div id="movie-title">
                 <span class="movie-title">${data.Title}</span>
-                <span class="movie-rate"> ⭐️ ${data.Ratings[0].Value.slice(
-                  0,
-                  3
-                )}</span>
+                <span class="movie-rate"> ⭐️ ${rating}</span>
               </div>
             <div class="movie-short-info">
             <span class="movie-year">${data.Year}</span>
                 <span class="movie-runtime">${data.Runtime}</span>
                 <span class="movie-genre">${data.Genre}</span
-                ><button class="film-btn hidden" id="remove-btn" data-imdb = ${
-                  data.imdbID
-                }>
+                ><button class="film-btn hidden" id="remove-btn" data-imdb = ${data.imdbID}>
                   <img src="images/minus-icon.png" alt="" />
                   Remove
                 </button>
-                <button class="film-btn" id="add-btn" data-imdb = ${
-                  data.imdbID
-                }>
+                <button class="film-btn" id="add-btn" data-imdb = ${data.imdbID}>
                   <img src="images/plus-icon.png" alt="" />
                   Watchlist
                 </button>
