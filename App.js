@@ -38,6 +38,7 @@ document.addEventListener("click", (e) => {
       return btn.dataset.imdb === e.target.dataset.imdb;
     });
     const oldArray = JSON.parse(localStorage.getItem("watchlistMovies"));
+    //toggle buttons
     targetBtn[0].classList.toggle("hidden");
     targetBtn[1].classList.toggle("hidden");
     // remove movie from local storage
@@ -119,8 +120,13 @@ function renderMovies() {
           fetch(`https://www.omdbapi.com/?t=${searchTitle}&apikey=124ce01e`)
             .then((res) => res.json())
             .then((data) => {
-              searchedMoviesArray.push(data);
-              getMovieCardHtml(data);
+              //prevents repeatition of movies have same title
+              if (
+                !searchedMoviesArray.find((movie) => movie.Title === data.Title)
+              ) {
+                searchedMoviesArray.push(data);
+                getMovieCardHtml(data);
+              }
             });
         }
       } else {
