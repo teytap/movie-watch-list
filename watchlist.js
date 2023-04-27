@@ -7,7 +7,7 @@ document.addEventListener("click", (e) => {
     const newArray = oldArray.filter((movie) => {
       return movie.imdbID != e.target.dataset.imdb;
     });
-    console.log(newArray);
+
     localStorage.setItem("watchlistMovies", JSON.stringify(newArray));
 
     watchlistContainer.innerHTML = getWatchlistHtml();

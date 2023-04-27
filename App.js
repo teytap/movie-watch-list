@@ -29,7 +29,6 @@ document.addEventListener("click", (e) => {
       localArray.push(targetMovies[0]);
     }
     localStorage.setItem("watchlistMovies", JSON.stringify(localArray));
-    console.log(targetMovies[0]);
   }
 
   //------remove button------

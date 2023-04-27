@@ -7,11 +7,13 @@ body {
 }
 .container {
   box-shadow: 0px 0px 10px black;
-  width: 650px;
+  max-width: 700px;
   padding: 0;
 }
 header {
-  background-image: url("images/THJJRUhNlEc.png");
+  /* background-image: url("images/THJJRUhNlEc.png"); */
+  background-image: url("images/onlyLoversLeftAlive.jpg");
+  background-position: center center;
   background-size: cover;
   height: 208px;
   color: white;
@@ -39,7 +41,7 @@ form {
 }
 main {
   min-height: 80vh;
-  width: 650px;
+  /* width: 700px; */
   padding: 34px;
   margin: 0 auto;
 }
@@ -142,4 +144,34 @@ main {
 .no-data-container {
   margin-top: 160px;
   text-align: center;
+}
+@media (max-width: 600px) {
+  .poster {
+    width: 44%;
+  }
+  .movie-short-info {
+    flex-direction: column;
+    gap: 6px;
+  }
+  #remove-btn,
+  #add-btn {
+    width: 100%;
+  }
+}
+@media (max-width: 540px) {
+  .movie-card {
+    flex-direction: column;
+  }
+  .poster {
+    width: 100%;
+  }
+  .movie-short-info {
+    flex-direction: column;
+    gap: 6px;
+  }
+  #remove-btn,
+  #add-btn {
+    width: 100%;
+    margin-top: 12px;
+  }
 }
